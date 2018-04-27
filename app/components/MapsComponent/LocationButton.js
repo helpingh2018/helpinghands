@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, Image, TouchableOpacity } from 'react-native'
 
-import AssetMap from '../config/AssetMap'
+import AssetMap from '../../config/MapConfig/AssetMap'
 
 export default class LocationButton extends Component {
 

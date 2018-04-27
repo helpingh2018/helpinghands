@@ -1,11 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  StatusBar
+} from 'react-native';
+
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import Router from './containers/Router'
+import SplashScreen from 'react-native-splash-screen'
 
-// This app doesn't use actual APIs or dynamic data currently,
-// but feel free to take this app as a starting point and build it out
+import Router from './containers/MapContainers/Router'
+
 const initialState = {
   recentLocations: [
     {id: 0, icon: 'home', title: 'Home', subtitle: '123 Spear St, San Francisco'},
@@ -15,15 +23,40 @@ const initialState = {
     {id: 4, icon: 'recent', title: '445 1st St', subtitle: 'Sunnyvale, CA'},
   ]
 }
-
+  
 const store = createStore((state) => state, initialState)
 
-export default class App extends Component {
+type Props = {};
+export default class App extends Component<Props> {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+
   render() {
     return (
-      <Provider store={store}>
-        <Router />
-      </Provider>
-    )
+    <Provider store={store}>
+      <Router />
+    </Provider>
+    );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#4F6D7A',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: '#F5FCFF',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#F5FCFF',
+    marginBottom: 5,
+  },
+});

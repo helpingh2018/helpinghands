@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 
-import AssetMap from '../config/AssetMap'
+import AssetMap from '../../config/MapConfig/AssetMap'
 
 export default class SearchResultsRow extends Component {
 

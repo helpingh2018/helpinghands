@@ -57,7 +57,7 @@ export default class LocationButtonGroup extends Component {
       >
         <Image
           style={[styles.gradient, gradientStyle]}
-          source={require('../images/bottom-gradient-overlay.png')}
+          source={require('../../images/bottom-gradient-overlay.png')}
         />
         {locations.map(this.renderItem)}
       </Animatable.View>

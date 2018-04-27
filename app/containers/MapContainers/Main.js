@@ -11,7 +11,7 @@ import {
   LocationSearchResults,
   SearchResultsList,
   NavigationIcon,
-} from '../components'
+} from '../../components/MapsComponent'
 
 const mapStateToProps = (state) => ({
   recentLocations: state.recentLocations,
